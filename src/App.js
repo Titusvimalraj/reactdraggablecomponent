@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import WithProps from './hoc/WithProps';
 import { Button } from 'reactstrap';
 
 function App() {
@@ -27,7 +28,9 @@ function App() {
 
   return (
     <div className="App">
+      <WithProps>
       <Button draggable color="primary" style={{ position: 'absolute', top: topPostion, left: leftPostion }} onDragStart={event => { updateDragStart(event) }} onDragEnd={event => { updateDragEnd(event) }} onDrag={event => { updateDragging(event) }}>{`Click me & drag`}</Button>
+      </WithProps>
     </div>
   );
 }
