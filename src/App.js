@@ -9,8 +9,10 @@ function App() {
   const [leftPostion, setLeftPostion] = useState(0);
 
   const updateDragging = (e) => {
-    setTopPostion(e.clientY);
-    setLeftPostion(e.clientX);
+    if (dragging) {
+      setTopPostion(e.clientY);
+      setLeftPostion(e.clientX);
+    }
   }
 
   const updateDragStart = (e) => {
